@@ -25,13 +25,13 @@ public class TransformerGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String getName,getFaccion,getFunction;
-                int getPower;
+                double getPower;
                 txtName.grabFocus();
                 getName=txtName.getText();
                 getFaccion=txtFaccion.getText();
                 getFunction=txtFunction.getText();
                 try{
-                    getPower=Integer.parseInt(txtPower.getText());
+                    getPower=Double.parseDouble(txtPower.getText());
                     newTransformer =new Transformer(getName,getFaccion,getPower,getFunction);
                     queueTransformer.enqueueTransformers(newTransformer, txtResponse);
                     txtName.setText("");
@@ -53,7 +53,7 @@ public class TransformerGUI {
                     queueTransformer.createNewQueue(value,txtResponse);
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null,"Valor Incorrecto");
-                    throw new RuntimeException("Valor Incorrecto");
+                    throw new RuntimeException(ex);
                 }
             }
         });
