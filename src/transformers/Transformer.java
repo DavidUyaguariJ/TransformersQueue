@@ -3,18 +3,20 @@ package transformers;
 public class Transformer {
     private String name;
     private String faction;
-    private int power;
+    private double power;
     private String function;
 
     public Transformer() {
         this.name = "Bumblebee";
-        this.faction = "Autobot";
+        this.faction = "Decepticon";
         this.power = 3;
         this.function ="Guerrero";
     }
-
-    public Transformer(String nombre, String faction, int power, String function) {
-        this.name = nombre;
+    /**
+     * @param power {double} permite mostrar el poder, tipo double para poder generar los aumentos de poder
+     * */
+    public Transformer(String name, String faction, double power, String function) {
+        this.name = name;
         this.faction = faction;
         this.power = power;
         this.function = function;
@@ -24,7 +26,7 @@ public class Transformer {
         return faction;
     }
 
-    public int getPower() {
+    public double getPower() {
         return power;
     }
 
@@ -32,7 +34,7 @@ public class Transformer {
         this.faction = faction;
     }
 
-    public void setPower(int power) {
+    public void setPower(double power) {
         this.power = power;
     }
 
